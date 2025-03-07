@@ -41,11 +41,13 @@ function checkGuess() {
 
     if (guess === parolaSegreta) {
         document.getElementById("message").textContent = "Brava! 🎉 Hai sbloccato il messaggio nascosto! Buon Compleanno +7! 🎂 Cordiali saluti dai tuoi compagnetti di banco Giovanni Luca e Martina";
+        document.getElementById("message").style.display = "block";  // Mostra il messaggio
         guessInput.disabled = true;
         triggerFireworks();
         showDogs();
     } else if (tentativi >= maxTentativi) {
         document.getElementById("message").textContent = "Peccato! La parola era: " + parolaSegreta;
+        document.getElementById("message").style.display = "block";  // Mostra il messaggio
         guessInput.disabled = true;
     }
 }
