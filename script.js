@@ -12,43 +12,29 @@ function creaGriglia() {
 }
 
 function checkGuess() {
-    const guessInput = document.getElementById("guessInput");
-    let guess = guessInput.value.toUpperCase();
-
-    if (guess.length !== 4) {
-        alert("La parola deve essere di 4 lettere!");
-        return;
-    }
-
-    const grid = document.getElementById("grid");
-    const rowStart = tentativi * 4;
-    
-    for (let i = 0; i < 4; i++) {
-        const box = grid.children[rowStart + i];
-        box.textContent = guess[i];
-
-        if (guess[i] === parolaSegreta[i]) {
-            box.classList.add("correct");
-        } else if (parolaSegreta.includes(guess[i])) {
-            box.classList.add("present");
-        } else {
-            box.classList.add("absent");
-        }
-    }
-
-    tentativi++;
+    const guessInput = document.getElementById("guess");
+    const guess = guessInput.value.toUpperCase();
     guessInput.value = "";
 
-    if (guess === parolaSegreta) {
+    if (guess === "CANE") {
+        // Modifica il testo del messaggio
         document.getElementById("message").textContent = "Brava! 🎉 Hai sbloccato il messaggio nascosto! Buon Compleanno +7! 🎂 Cordiali saluti dai tuoi compagnetti di banco Giovanni Luca e Martina";
+
+        // Rende visibile il messaggio
+        const messageElement = document.getElementById("message");
+        messageElement.style.display = "block";  // Impostiamo display su 'block' per renderlo visibile
+
+        // Disabilita l'input per evitare ulteriori tentativi
         guessInput.disabled = true;
+
+        // Avvia i fuochi d'artificio
         triggerFireworks();
+
+        // Mostra i bassotti con i cappellini
         showDogs();
-    } else if (tentativi >= maxTentativi) {
-        document.getElementById("message").textContent = "Peccato! La parola era: " + parolaSegreta;
-        guessInput.disabled = true;
     }
 }
+
 
 function createFirework(x, y) {
     for (let i = 0; i < 10; i++) {
