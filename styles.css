@@ -5,7 +5,7 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
+    grid-template-columns: repeat(5, 50px);
     gap: 5px;
     justify-content: center;
     margin-bottom: 10px;
@@ -41,7 +41,7 @@ body {
     text-transform: uppercase;
 }
 
-/* ANIMAZIONE FUOCHI D'ARTIFICIO */
+
 @keyframes fireworks {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: scale(1.5); opacity: 0; }
@@ -56,7 +56,6 @@ body {
     animation: fireworks 1s ease-out forwards;
 }
 
-/* ANIMAZIONE CAGNOLINI */
 .dog {
     position: absolute;
     width: 100px;
@@ -66,65 +65,4 @@ body {
 @keyframes bounce {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
-}
-
-/* Impostazioni generali */
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #282c34;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Messaggio di auguri */
-#message {
-    position: fixed;         /* Blocca il messaggio in posizione fissa */
-    top: 50%;                /* Centra verticalmente */
-    left: 50%;               /* Centra orizzontalmente */
-    transform: translate(-50%, -50%); /* Centra perfettamente */
-    font-size: 24px;         /* Modifica la dimensione del font */
-    color: #fff;             /* Colore del testo */
-    z-index: 1000;           /* Porta il messaggio sopra gli altri elementi */
-}
-
-/* Fuochi d'artificio */
-.firework {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: gold;
-    animation: firework-animation 1s ease-out;
-}
-
-@keyframes firework-animation {
-    0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(3) translateY(-150px);
-        opacity: 0;
-    }
-}
-
-/* Cagnolini */
-.dog {
-    position: fixed;
-    width: 80px;
-    bottom: 40px;    /* Posizionato più in basso */
-    left: 10px;      /* Posizione centrata */
-    z-index: 500;    /* Assicurati che non copra il messaggio */
-}
-
-/* Griglia di lettere per il gioco */
-#grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    z-index: 10;
 }
