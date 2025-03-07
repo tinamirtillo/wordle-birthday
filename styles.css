@@ -67,3 +67,23 @@ body {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
 }
+
+#message {
+    position: absolute;
+    top: 10%; /* Posiziona il messaggio in alto */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    color: #ff6347; /* Rosso brillante per il messaggio */
+    display: none; /* Messaggio nascosto di default */
+    z-index: 1000; /* Assicura che il messaggio si sovrapponga agli altri elementi */
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 600px) {
+    #message {
+        font-size: 18px; /* Ridurre la dimensione del testo per schermi più piccoli */
+        top: 15%; /* Posizionamento ottimale per dispositivi mobili */
+    }
+}
