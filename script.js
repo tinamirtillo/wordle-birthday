@@ -40,7 +40,7 @@ function checkGuess() {
     guessInput.value = "";
 
     if (guess === parolaSegreta) {
-        document.getElementById("message").textContent = "Brava! 🎉 Ecco il tuo messaggio: Buon Compleanno! 🎂";
+        document.getElementById("message").textContent = "Brava! 🎉 Hai sbloccato il messaggio nascosto! Buon Compleanno +7! 🎂 Cordiali saluti dai tuoi compagnetti di banco Giovanni Luca e Martina";
         guessInput.disabled = true;
         triggerFireworks();
         showDogs();
