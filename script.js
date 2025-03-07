@@ -1,10 +1,10 @@
-const parolaSegreta = "CANE";  // Cambia con la parola che vuoi!
+const parolaSegreta = "LUCE";  // Cambia con la parola che vuoi!
 let tentativi = 0;
 const maxTentativi = 6;
 
 function creaGriglia() {
     const grid = document.getElementById("grid");
-    for (let i = 0; i < maxTentativi * 4; i++) {
+    for (let i = 0; i < maxTentativi * 5; i++) {
         const div = document.createElement("div");
         div.classList.add("letter-box");
         grid.appendChild(div);
@@ -40,17 +40,17 @@ function checkGuess() {
     guessInput.value = "";
 
     if (guess === parolaSegreta) {
-        document.getElementById("message").textContent = "Brava! 🎉 Hai sbloccato il messaggio nascosto! Buon Compleanno +7! 🎂 Cordiali saluti dai tuoi compagnetti di banco Giovanni Luca e Martina";
-        document.getElementById("message").style.display = "block";  // Mostra il messaggio
+        document.getElementById("message").textContent = "Brava! 🎉 Ecco il tuo messaggio: Buon Compleanno! 🎂";
         guessInput.disabled = true;
-        triggerFireworks();
+		triggerFireworks();
         showDogs();
     } else if (tentativi >= maxTentativi) {
         document.getElementById("message").textContent = "Peccato! La parola era: " + parolaSegreta;
-        document.getElementById("message").style.display = "block";  // Mostra il messaggio
         guessInput.disabled = true;
     }
 }
+
+window.onload = creaGriglia;
 
 function createFirework(x, y) {
     for (let i = 0; i < 10; i++) {
@@ -83,5 +83,3 @@ function showDogs() {
         document.body.appendChild(img);
     });
 }
-
-window.onload = creaGriglia;
