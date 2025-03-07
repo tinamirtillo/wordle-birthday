@@ -5,7 +5,7 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(5, 50px);
+    grid-template-columns: repeat(4, 50px);
     gap: 5px;
     justify-content: center;
     margin-bottom: 10px;
@@ -41,6 +41,7 @@ body {
     text-transform: uppercase;
 }
 
+/* ANIMAZIONE FUOCHI D'ARTIFICIO */
 @keyframes fireworks {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: scale(1.5); opacity: 0; }
@@ -55,6 +56,7 @@ body {
     animation: fireworks 1s ease-out forwards;
 }
 
+/* ANIMAZIONE CAGNOLINI */
 .dog {
     position: absolute;
     width: 100px;
